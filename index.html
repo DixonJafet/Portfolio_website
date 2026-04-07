@@ -4,191 +4,589 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css">
-    <title>CV-Based Static Portfolio Site</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Jafet Dixon Solano — Portfolio</title>
   </head>
   <body>
-    <header class="header">
-      <div class="container">
-        <h1>Jafet Dixon Solano</h1>
-        <p class="subtitle">Software Engineer | Data Science </p>
-        <div class="contact-links">
-          <a href="mailto:dixonjafet@gmail.com" target="_blank">Email</a>
-          <a href="https://www.linkedin.com/in/jafet-dixon-solano-733321174" target="_blank">LinkedIn</a>
-          <a href="https://github.com/DixonJafet" target="_blank">GitHub</a>
-          <a href="https://github.com/JafetDS" target="_blank">GitHub 2</a>
-        </div>
+
+    <!-- SIDE MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div></div>
+      <span class="brand-dot"></span>
+      <div class="topbar-brand">Jafet Dixon Solano</div>
+      <div class="nav-buttons">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()">←</button>
+        <button class="nav-btn nav-btn--next" id="nextBtn" onclick="nextSlide()">Next →</button>
       </div>
     </header>
 
-    <main class="container">
-      <section class="about">
-        <h2>About Me</h2>
-        <p>Standing out for my soft skills and my passion for continuous learning. I adapt easily to new technologies and work environments, which allows me to integrate quickly and add value to teams.</p>
-        <p><strong>Location:</strong> Costa Rica | <strong>Phone:</strong> +506 83151651</p>
-      </section>
+    <!-- SLIDES WRAPPER -->
+    <div class="slides-wrapper" id="slidesWrapper">
 
-      <section class="education">
-        <h2>Education</h2>
-        <div class="education-item">
-          <h3>Costa Rica Institute of Technology (TEC)</h3>
-          <p>Computer Engineering</p>
-        </div>
-        <div class="education-item">
-          <h3>Certifications</h3>
-          <ul>
-            <li>Applied Data Science with Python L2 - <a href="https://www.credly.com/badges/66339399-ebc0-4687-a390-e7b71b96f4f6/" target="_blank">IBM Data Science with Python</a></li>
-
-            <li>Machine Learning Pipelines with Azure ML Studio - <a href="https://www.coursera.org/account/accomplishments/verify/11PE1P014WKR" target="_blank">Azure-Coursera</a></li>
-
-            <li>Google Data Analytics Professional Certificate - <a href="https://www.coursera.org/account/accomplishments/verify/MK6NUW9AVXQH" target="_blank">Data Analysis Google</a></li>
-          </ul>
-        </div>
-        <div class="education-item">
-          <h3>Professional Technical High School of Limón</h3>
-          <p>IT Technician in Support</p>
-        </div>
-      </section>
-
-      <section class="projects">
-        <h2>Projects</h2>
-
-	<div class="project-card">
-          <h3>TrainTickets</h3>
-          <p>Management system designed for professors, similar to Google Classroom using Azure Cloud hosting .</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/Train_CRdigital" target="_blank">GitHub</a>
-            <a href="https://train-ticket-cr.up.railway.app/route-selection" target="_blank">Live Demo</a>
+      <!-- SLIDE 0: HERO -->
+      <section class="slide slide--hero active" data-index="0">
+        <div class="slide-left">
+          <p class="slide-eyebrow">Welcome to my portfolio</p>
+          <h1>Software <strong>Engineer</strong><br>& Data <strong>Scientist</strong></h1>
+          <p class="slide-desc">Building scalable backends, cloud-native apps, and data-driven systems. Based in Costa Rica, working globally.</p>
+          <div class="about-details">
+            <div class="detail-pill">📍 Costa Rica</div>
+            <div class="detail-pill">📞 +506 83151651</div>
+            <div class="detail-pill">🌐 C1 English</div>
+            <div class="detail-pill">🗣️ Native Spanish</div>
+          </div>
+          <div class="slide-actions">
+            <button class="btn-primary" onclick="goToSlide(1)">View Projects →</button>
           </div>
         </div>
-
-
-        <div class="project-card">
-          <h3>VirtualClassRoom</h3>
-          <p>Management system designed for professors, similar to Google Classroom using Azure Cloud hosting .</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/VirtualClassRoom" target="_blank">GitHub</a>
-            <a href="https://virtual-class-room-peach.vercel.app" target="_blank">Live Demo</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>DixonGPT</h3>
-          <p>Chat AI powered by a Mini LLM model (using Python)running on Amazon AWS Services in Docker Container.</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/DixonGPT" target="_blank">GitHub</a>
-            <a href="https://dixon-gpt.vercel.app" target="_blank">Live Demo</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Costa Rica Elections</h3>
-          <p>A repository containing various Data Science projects. (Snowflake, DataBricks, PowerBI, PySpark, Pandas, etc ...)</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/Elections_ELT_Project" target="_blank">GitHub</a>
-            <a href="https://public.tableau.com/views/Elections_17708764490170/AnlisisHistricoEleccionesPresidencialesenCostaRica1986-2026?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target
-            ="_blank">DashBoard</a>
-          </div>
-        </div>
-
-	<div class="project-card">
-          <h3>Flight Prediction Delay</h3>
-          <p>A repository containing various Data Science projects. (Snowflake, DataBricks, PowerBI, PySpark, Pandas, etc ...)</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/Flights_Predictions" target="_blank">GitHub</a>
-            <a href="https://dixonjafet.github.io/Flight_Dashboard_DataBricks" target
-            ="_blank">DashBoard</a>
-          </div>
-        </div>
-
-	<div class="project-card">
-          <h3>Data Science Projects</h3>
-          <p>A repository containing various Data Science projects. (Snowflake, DataBricks, PowerBI, PySpark, Pandas, etc ...)</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/DataAnalysis" target="_blank">GitHub</a>
-            <a href="https://colab.research.google.com/drive/1yBgCDW8X2QICDE2C087UfiRKXnC-XsBN?usp=sharing" target
-            ="_blank">Sample Project</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Assembly x8086 Basic Graphic Calculator</h3>
-          <p>Low-level calculator implementation in Assembly language.</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/x8086ASMCalc" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>C++ Remote Memory Management</h3>
-          <p>Language and Remote Memory Management using Sockets for Communication.</p>
-          <div class="project-links">
-            <a href="https://github.com/JafetDS/Proyecto1Datos2C" target="_blank">GitHub</a>
-          </div>
-        </div>
-
-       <div class="project-card">
-          <h3>Digital Control System</h3>
-          <p>Signal control using a system of logic gates for Communication and arithmetic calculation in Logisim.</p>
-          <div class="project-links">
-            <a href="https://github.com/DixonJafet/Control_System" target="_blank">GitHub</a>
-          </div>
+        <div class="slide-right contact-visual">
+          <a href="https://www.linkedin.com/in/jafet-dixon-solano-733321174" rel="noopener noreferrer" target="_blank" class="contact-card">
+            <span class="contact-card__icon">in</span>
+            <div>
+              <h3>LinkedIn</h3>
+              <p>jafet-dixon-solano</p>
+            </div>
+          </a>
+          <a href="https://github.com/DixonJafet" target="_blank" class="contact-card">
+            <span class="contact-card__icon">⌥</span>
+            <div>
+              <h3>GitHub (Main)</h3>
+              <p>DixonJafet</p>
+            </div>
+          </a>
+          <a href="mailto:dixonjafet@gmail.com" class="contact-card">
+            <span class="contact-card__icon">@</span>
+            <div>
+              <h3>Email</h3>
+              <p>dixonjafet@gmail.com</p>
+            </div>
+          </a>
+          <a href="https://github.com/JafetDS" target="_blank" class="contact-card">
+            <span class="contact-card__icon">⌥</span>
+            <div>
+              <h3>GitHub (Alt)</h3>
+              <p>JafetDS</p>
+            </div>
+          </a>
+          
         </div>
       </section>
 
-      <section class="skills">
-        <h2>Technical Skills</h2>
-
-        <div class="skill-category">
-          <h3>Programming</h3>
-          <p>Java, C#, Python, JavaScript, C/C++, Assembly</p>
+      <!-- SLIDE 1: ABOUT -->
+      <section class="slide slide--about" data-index="1">
+        <div class="slide-left">
+          <p class="slide-eyebrow">What I've built</p>
+          <h1>Projects for <strong>Software</strong> developer</h1>
+          <p class="slide-desc">Live demo End-to-end projects where I demonstrate my skills in building <strong>Full-Stack</strong> applications using various <strong>Frontend</strong> and <strong>Backend</strong> technologies, including <strong>Cloud</strong> platforms and computing to deploy the projects. </p>
+          
+          <button class="btn-primary" onclick="goToSlide(2)">See my Data Projects →</button>
         </div>
-
-        <div class="skill-category">
-          <h3>Frameworks</h3>
-          <p>.NET MVC, Node.js, React.js, Angular js, SpringBoot, Maven</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Databases</h3>
-          <p>MySQL, SQL Server, MongoDB, Redis, PostgreSQL</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Cloud Services</h3>
-          <p>AWS (Lambda, EC2, S3, ECR, API Gateway), Azure (App Services, Azure Blob Storage, Azure Database)</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>DevOps</h3>
-          <p>Docker, Kubernetes, Github Actions</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Data Science (ETL)</h3>
-          <p>PowerBI (DAX), Spark, Airflow, Matplotlib, Pandas, Tableau, Snowflake, DataBricks.</p>
-        </div>
-
-        <div class="skill-category">
-          <h3>Others</h3>
-          <p>bash Linux, SSH protocol, APIs, Jira</p>
+                <div class="slide-right projects-grid">
+          <div class="proj-card" onclick="openMenu('project_1')">
+            <div class="proj-img">🚆</div>
+            <div class="proj-info">
+              <h3>TrainTickets</h3>
+              <p>Train booking system created in AngularJS</p>
+            </div>
+          </div>
+          <div class="proj-card" onclick="openMenu('project_2')">
+            <div class="proj-img">🎓</div>
+            <div class="proj-info">
+              <h3>VirtualClassRoom</h3>
+              <p>Google Classroom-style app on Azure</p>
+            </div>
+          </div>
+          <div class="proj-card" onclick="openMenu('project_3')">
+            <div class="proj-img">🤖</div>
+            <div class="proj-info">
+              <h3>DixonGPT</h3>
+              <p>Mini LLM chat app — AWS + Docker</p>
+            </div>
+          </div>
+          <a class="proj-card" href="https://github.com/DixonJafet/x8086ASMCalc" target="_blank">
+            <div class="proj-img">🔢</div>
+            <div class="proj-info">
+              <h3>Assembly x8086</h3>
+              <p>Basic Graphic Calculator <strong>(no live demo)</strong></p>
+            </div>
+          </a>
+          <a class="proj-card" href="https://github.com/JafetDS/Proyecto1Datos2C" target="_blank">
+            <div class="proj-img"><strong>C++</strong></div>
+            <div class="proj-info">
+              <h3>Mini Editor</h3>
+              <p>For Visual memory variable alocation <strong>(no live demo)</strong></p>
+            </div>
+          </a>
         </div>
       </section>
 
-      <section class="languages">
-        <h2>Languages</h2>
-        <div class="language-item">
-          <strong>English:</strong> B2+ (Professional use at Amazon Alexa Support)
+      <!-- SLIDE 2: PROJECTS -->
+      <section class="slide slide--projects" data-index="2">
+        <div class="slide-left">
+          <p class="slide-eyebrow">What I've built with Data</p>
+          <h1>Explore <strong>latest</strong><br>projects</h1>
+          <p class="slide-desc">Live demo of <strong>ELT/ETL</strong>
+              projects, also <strong>data dashboard</strong>,
+              <strong>data pipelines</strong> and <strong>cloud-deployed systems</strong> using different Platforms and Technologies.
+          </p>
+          <div class="slide-actions">
+            <button class="btn-primary" onclick="goToSlide(3)">View Skills →</button>
+          </div>
         </div>
-        <div class="language-item">
-          <strong>Spanish:</strong> Native
+        <div class="slide-right projects-grid">
+          <div class="proj-card" onclick="openMenu('project_4')" >
+            <div class="proj-img">🗳️</div>
+            <div class="proj-info">
+              <h3>CR Elections</h3>
+              <p>ELT Pipeline + Tableau Dashboard</p>
+            </div>
+          </div>
+          <div class="proj-card" onclick="openMenu('project_5')" >
+            <div class="proj-img">✈️</div>
+            <div class="proj-info">
+              <h3>Flight Delay Prediction</h3>
+              <p>DataBricks + Spark ML Model</p>
+            </div>
+          </div>
+          <div class="proj-card" onclick="openMenu('project_6')">
+            <div class="proj-img">📈</div>
+            <div class="proj-info">
+              <h3>Data Dashboards</h3>
+              <p>Power BI</p>
+            </div>
+          </div>
+          <div class="proj-card" onclick="openMenu('project_7')">
+            <div class="proj-img">PY</div>
+            <div class="proj-info">
+              <h3>Data Science Projects</h3>
+              <p>PySpark · Pandas · Matplotlib</p>
+            </div>
+          </div>
         </div>
       </section>
-    </main>
 
-    <footer class="footer">
-      <div class="container">
-        <p>&copy; 2025 Jafet Dixon Solano. All rights reserved.</p>
+      <!-- SLIDE 3: SKILLS -->
+      <section class="slide slide--skills" data-index="3">
+        <div class="slide-left">
+          <p class="slide-eyebrow">What I know</p>
+          <h1>Technical <strong>skills</strong><br>&amp; tools</h1>
+          <p class="slide-desc">A broad stack covering backend engineering, cloud infrastructure, data science pipelines, and modern frontend development.</p>
+          <button class="btn-primary" onclick="goToSlide(4)">Education →</button>
+        </div>
+        <div class="slide-right skills-grid">
+          
+          
+          <div class="skill-block">
+            <h4>Data Science</h4>
+            <div class="skill-tags">
+              <span>PowerBI</span><span>Spark</span><span>Airflow</span>
+              <span>Pandas</span><span>Tableau</span><span>Snowflake</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Databases</h4>
+            <div class="skill-tags">
+              <span>MySQL</span><span>PostgreSQL</span><span>MongoDB</span>
+              <span>Redis</span><span>SQL Server</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Cloud &amp; DevOps</h4>
+            <div class="skill-tags">
+              <span>AWS Lambda</span><span>EC2</span><span>S3</span>
+              <span>Azure</span><span>Docker</span><span>Kubernetes</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Programming</h4>
+            <div class="skill-tags">
+              <span>Java</span><span>C#</span><span>Python</span>
+              <span>JavaScript</span><span>C/C++</span><span>Assembly</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <h4>Frameworks</h4>
+            <div class="skill-tags">
+              <span>.NET MVC</span><span>Node.js</span><span>React</span>
+              <span>Angular</span><span>SpringBoot</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 4: EDUCATION -->
+      <section class="slide slide--education" data-index="4">
+        <div class="slide-left">
+          <p class="slide-eyebrow">My background</p>
+          <h1>Education &amp;<br><strong>certifications</strong></h1>
+          <p class="slide-desc">Formal engineering training combined with industry-recognized certifications in data science, cloud computing, and analytics.</p>
+          <button class="btn-primary" onclick="goToSlide(5)">Experience →</button>
+        </div>
+        <div class="slide-right edu-list">
+          <div class="edu-item">
+            <div class="edu-icon">🏛️</div>
+            <div>
+              <h3>Costa Rica Institute of Technology (TEC)</h3>
+              <p>Computer Engineering</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-icon">🏫</div>
+            <div>
+              <h3>Professional Technical High School of Limón</h3>
+              <p>IT Technician in Support</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-icon">🏅</div>
+            <div>
+              <h3>Applied Data Science with Python L2</h3>
+              <p><a href="https://www.credly.com/badges/66339399-ebc0-4687-a390-e7b71b96f4f6/" target="_blank">IBM — Credly Badge ↗</a></p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-icon">☁️</div>
+            <div>
+              <h3>Machine Learning Pipelines with Azure ML Studio</h3>
+              <p><a href="https://www.coursera.org/account/accomplishments/verify/11PE1P014WKR" target="_blank">Azure · Coursera ↗</a></p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-icon">📊</div>
+            <div>
+              <h3>Google Data Analytics Professional Certificate</h3>
+              <p><a href="https://www.coursera.org/account/accomplishments/verify/MK6NUW9AVXQH" target="_blank">Google · Coursera ↗</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SLIDE 5: CONTACT -->
+      <section class="slide slide--contact" data-index="5">
+        <div class="slide-left">
+          <p class="slide-eyebrow">Where I've been</p>
+          <h1>My <strong>laboral</strong><br> <strong>experience</strong> </h1>
+          <p class="slide-desc">Places where I have contributed using my knowledge and also acquired new skills. Now I'm open to new opportunities, colaborations, and interesting projects.</p>
+
+        </div>
+        <div class="slide-right about-visual">
+          <div class="about-card">
+            <div class="about-card__icon">💻</div>
+            <h3>Amazon IT Support</h3>
+            <p>Experience Solving IT problems, and creatings reports of KPIs</p>
+          </div>
+          <div class="about-card cert-row">
+            <div class="about-card__icon">🏥</div>
+            <h3>CCSS - Dr. Tony Facio Castro Hospital</h3>
+            <p>Experience in Data Management and DB maintenance</p>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- end slides-wrapper -->
+
+        <!-- SIDE NAVIGATION MENU -->
+    <nav class="side-menu" id="sideMenu">
+      <button class="menu-close" onclick="closeMenu()">✕</button>
+      <div class= "projects"><!-- Here are the Projects--------------------- -->
+    <div class="content" id = "project_3">
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              Chat with <strong>your own</strong><br>AI assistant
+              </h1>
+              <p class="desc">
+              DixonGPT is a lightweight conversational AI powered by a custom Mini LLM model stored in 
+              <strong>AWS S3</strong>,
+              containerized with <strong>Docker</strong> using <strong>ECR</strong> 
+              and deployed on <strong>EC2</strong> using <strong>Python</strong> for API. 
+              The interface is developed in <strong>AngularJS</strong> .
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+              <!-- Primary CTA — link to Live Demo -->
+              <a class="cta" href="https://dixon-gpt.vercel.app" target="_blank">
+              <div class="cta-icon"></div>
+              Try it now
+              </a>
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/DixonGPT" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+            <iframe 
+                class= "project-vid"
+                src="https://www.youtube-nocookie.com/embed/MvdE25l-mGc?si=uqi_4Mbqkk80FHet" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen></iframe>
+          </div>
+    </div><!-- /content -->
+      <div class="content" id = "project_1"><!-- /PROJECT_2 -->
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              Buy now <strong>your tickets</strong><br>Online
+              </h1>
+              <p class="desc">
+              A Mobile first design proposal website platform to buy train tickets based in CR routes, 
+              The API was created using <strong>JAVA</strong> / <strong>SpringBoot</strong> framework.
+              The interface was developed in <strong>AngularJS</strong>,
+              Data is Hosted in  <strong>MongoDB</strong> database.
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+              <!-- Primary CTA — link to Live Demo -->
+              <a class="cta" href="https://train-ticket-cr.up.railway.app/route-selection" target="_blank">
+              <div class="cta-icon"></div>
+              Try it now
+              </a>
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/Train_CRdigital" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+            <iframe 
+                class= "project-webmo"
+                src="https://train-ticket-cr.up.railway.app/route-selection" 
+                style="border: none;">
+            </iframe>
+          </div>
+      </div><!-- /content -->
+      <div class="content" id = "project_2"><!-- /PROJECT_3 -->
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              Buy now <strong>your tickets</strong><br>Online
+              </h1>
+              <p class="desc">
+              Website platform like google classroom for professors, 
+              The API was created using <strong>C#</strong> / <strong>.NET</strong> framework.
+              The interface was developed in <strong>ReactJS</strong>,
+              Data is Hosted in  <strong>SQLServer</strong> database, All the services are placed in <strong>Azure Cloud Services</strong>.
+              <strong>JWT</strong> for Login.
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+              <!-- Primary CTA — link to Live Demo -->
+              <a class="cta" href="https://virtual-class-room-peach.vercel.app" target="_blank">
+              <div class="cta-icon"></div>
+              Try it now
+              </a>
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/VirtualClassRoom" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+            <iframe 
+                class= "project-vid"
+                src="https://virtual-class-room-peach.vercel.app" >
+            </iframe>
+          </div>
+      </div><!-- /content -->
+      <div class="content" id = "project_4"><!-- /PROJECT_4 -->
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              The History of <strong>CR Democracy</strong><br>in graphics
+              </h1>
+              <p class="desc">
+                <strong>ELT</strong> project for Costa Rica’s political elections 1986-2026,
+                using <strong>CSV</strong> files from TSE and stored in <strong>S3</strong>.
+                Data is ingested into <strong>Snowflake</strong> Warehouse, where <strong>DBT</strong>
+                is used to transform and model the data. Analytical dashboards are built in
+                <strong>Tableau</strong>, the pipeline is orchestrated with <strong>Airflow</strong>.
+
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+              <!-- Primary CTA — link to Live Demo -->
+              <a class="cta" href="https://public.tableau.com/views/Elections_17708764490170/AnlisisHistricoEleccionesPresidencialesenCostaRica1986-2026" target="_blank">
+              <div class="cta-icon"></div>
+              Try it now
+              </a>
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/Elections_ELT_Project" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+
+          <div class="carousel carousel--scroll-buttons carousel--scroll-markers">
+            <div class="carousel__slide" data-label="Slide 1">
+              <iframe 
+                  class= "project-vid"
+                  src="https://www.youtube.com/embed/wEnZ9-dnWtU?si=l-JEAmIrQSbEAapY" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="carousel__slide" data-label="Slide 2">
+              <iframe 
+                  width="1000"
+                  height="504"
+                  class= "project-vid"
+                  src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;El&#47;Elections_17708764490170&#47;AnlisisHistricoEleccionesPresidencialesenCostaRica1986-2026&#47;1_rss.png"    
+                  style="border: none;">
+              </iframe>
+            </div>
+          </div>
       </div>
+      </div>
+      <div class="content" id = "project_5"><!-- /PROJECT_5 -->
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              Flight delay <strong>Predictions</strong><br>from Costa Rica
+              </h1>
+              <p class="desc">
+                  <strong>Pipeline</strong> pipeline project, built on <strong>Databricks</strong>. Ingests and transforms data using
+                  <strong>PySpark</strong>, <strong>SQL</strong>, and <strong>Delta Lake</strong>, while workflows are orchestrated with
+                  <strong>Databricks Workflows</strong>.The processed data and the accuracy of the predictions are displayed on a
+                  <strong>Power BI</strong> dashboard.
+
+
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+              <!-- Primary CTA — link to Live Demo -->
+              <a class="cta" href="https://app.powerbi.com/view?r=eyJrIjoiNTliODAzODEtOTJhYS00ZmIyLTg0ODAtMWYzYTRlNDM4MWE0IiwidCI6IjRhYmVmM2RjLWU2OTItNGRjOC05MmViLTkxNGExZjdjMmIyMSIsImMiOjZ9" target="_blank">
+              <div class="cta-icon"></div>
+              Try it now
+              </a>
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/Flights_Predictions" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+            <iframe 
+              title="Flight_project" 
+              class = "project-vid" 
+              src="https://app.powerbi.com/view?r=eyJrIjoiNTliODAzODEtOTJhYS00ZmIyLTg0ODAtMWYzYTRlNDM4MWE0IiwidCI6IjRhYmVmM2RjLWU2OTItNGRjOC05MmViLTkxNGExZjdjMmIyMSIsImMiOjZ9" 
+              frameborder="0" allowFullScreen="true">
+            </iframe>
+            
+          </div>
+      </div><!-- /content -->
+            <div class="content" id = "project_6"><!-- /PROJECT_6 -->
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              <strong>PowerBI</strong><br> Dashboards
+              </h1>
+              <p class="desc">
+                  Analytical dashboards built with <strong>Power BI</strong>
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/BI_projects" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+
+            <div class="carousel carousel--scroll-buttons carousel--scroll-markers">
+              <div class="carousel__slide" data-label="Slide 1">
+                <iframe title="World_Population" 
+                  class = "project-dsh"
+                  src="https://app.powerbi.com/view?r=eyJrIjoiMDA0NjFhNjAtNTE0Mi00NTBiLWI0Y2ItNjQ2NDMyMTQyYTQ0IiwidCI6IjRhYmVmM2RjLWU2OTItNGRjOC05MmViLTkxNGExZjdjMmIyMSIsImMiOjZ9" 
+                  frameborder="0" 
+                  allowFullScreen="true">
+                </iframe>                
+              </div>
+              <div class="carousel__slide" data-label="Slide 2">
+                <iframe title="World_Bicycles_Sales" 
+                  class="project-dsh"
+                  src="https://app.powerbi.com/view?r=eyJrIjoiYjZhZmQ0MGQtMDU4MC00NDQ4LWE1MWEtMDlkYWE5NDcyODg2IiwidCI6IjRhYmVmM2RjLWU2OTItNGRjOC05MmViLTkxNGExZjdjMmIyMSIsImMiOjZ9" 
+                  frameborder="0" 
+                  allowFullScreen="true">
+                </iframe>
+              </div>
+              <div class="carousel__slide" data-label="Slide 3">
+                <iframe title="Product_Control" 
+                  class="project-dsh"
+                  src="https://app.powerbi.com/view?r=eyJrIjoiNTgyYmUwMTEtNmJlNS00NzA5LWJjMmMtMzQzMjI2Mjc1NDExIiwidCI6IjRhYmVmM2RjLWU2OTItNGRjOC05MmViLTkxNGExZjdjMmIyMSIsImMiOjZ9&pageName=ReportSectionab2aa203a10b0183d6a6" 
+                  frameborder="0" 
+                  allowFullScreen="true">
+                </iframe>
+              </div>
+
+
+            <div>
+          </div>
+      </div><!-- /content -->
+      <div class="content" id = "project_7"><!-- /PROJECT_3 -->
+          <div class="left">          <!-- LEFT: Text -->
+              <div class="tag"><span class="tag-dot"></span> Live project</div>
+              <h1 class="title">
+              Python <strong>Data Analisys</strong><br>Projects
+              </h1>
+              <p class="desc">
+                Repository of data analysis projects using <strong>Spark</strong> and <strong>Pandas</strong>,
+                pipelines built with <strong>Airflow</strong>, and visualizations created using <strong>Matplotlib</strong>.
+
+              </p>
+              <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+
+              <!-- GitHub link -->
+              <a class="secondary-link" href="https://github.com/DixonJafet/DataAnalysis" target="_blank">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.34-3.369-1.34-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+              </svg>
+              View GitHub
+              </a>
+              </div>
+          </div>
+          <div class="right">          <!-- RIGHT: Project Image -->
+            <img src="Pyt.png"
+                class= "project-img"
+                 >
+          </div>
+      </div><!-- /content -->
+    </div><!-- /Projects -->
+    </nav>
+    <!-- BOTTOM BAR -->
+    <footer class="bottombar">
+      <div class="bottombar-brand">
+        <span class="brand-dot"></span>
+      </div>
+      <nav class="progress-nav" id="progressNav"></nav>
+      <span class="brand-dot"></span>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
