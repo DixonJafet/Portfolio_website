@@ -1,6 +1,6 @@
 const slides = document.querySelectorAll('.slide');
 const progressNav = document.getElementById('progressNav');
-const labels = ['Home','FullStack Projects','Data Projects','Skills','Education','Experience'];
+const labels = ['Home','Data Projects','FullStack Projects','Skills','Education','Experience'];
 let current = 0;
 let current_project; 
 // Build progress dots
